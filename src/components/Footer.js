@@ -3,16 +3,18 @@ import '../App.css';
 
 
 
-const Footer = () => {
+class Footer extends React.Component{
   
-  return (
 
-          <footer className="app-footer">
-              <p className="secondary-title-text">This paragraph is in the footer.</p>
-          </footer>
-          
-        )
+  render() {
+             return (
 
+                      <footer className="app-footer">
+                          <p className="secondary-title-text">Work in progress</p>
+                      </footer>
+                      
+                     )
+            }
 }
 
 export default Footer;

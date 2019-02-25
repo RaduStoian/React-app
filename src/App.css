@@ -26,14 +26,18 @@ text-align: center;
   padding-top:20px;
 }
 
-.individual-contact {
-  height:100px;
+.individual-item {
+  height:70px;
   border-bottom:1px solid grey;
+  margin-left:10px;
+  padding-top:50px;
 }
 
 .main-text {
   color:#333333;
   font-weight: bold;
+  display:inline;
+  margin-left:10px;
 }
 
 .app-footer {

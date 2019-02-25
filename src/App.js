@@ -1,36 +1,55 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Header from "./components/Header"
-import Contact from "./components/Contact"
 import Footer from "./components/Footer"
 
-import PeopleData from "./PeopleData"
+import TodoData from "./TodoData"
+import TodoItems from "./components/TodoItems"
 
 
+class App extends React.Component{
+  constructor() {
+    super()
+    this.state = {
+        todos: TodoData
+    }
 
-const App = () => {
+    this.handleClick = this.handleClick.bind(this)
+}
+
+  handleClick(id) {
+ 
+      this.setState(prevState => {
+        const updatedTodos = prevState.todos.map(todo => {
+          if (todo.id === id) 
+          {
+            todo.completed = !todo.completed
+          }
+          return todo
+        })
+          return {
+            todos: updatedTodos
+          }
+      })
+    
+  }
 
 
+  render() {
 
-  const MappedPeopleData = PeopleData.map( (person) => {
+    const MappedItems = this.state.todos.map(item => {
 
-    return (
-            <Contact key ={person.id} contact = {person} />
-           )
-  })
+        return <TodoItems key = {item.id} item = {item} handleClick={this.handleClick}/>
+    })
 
-
-  
-  return (
-    <div>
-    <Header />
-
-    {MappedPeopleData}
-
-    <Footer />
-    </div>
-  )
+        return (
+                <div>
+                    <Header />     
+                    {MappedItems}
+                    <Footer />
+                </div>
+              )
+      }
 }
 
 export default App;

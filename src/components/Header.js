@@ -3,14 +3,18 @@ import '../App.css';
 
 
 
-const Header = () => {
+class Header extends React.Component {
   
-  return (
 
-   <header className="app-header">
-       <p className="title-text">This paragraph is in the Header.</p>
-   </header>
-  )
+
+  render() {
+
+    return (
+            <header className="app-header">
+              <p className="title-text">Welcome to my To-do app</p>
+            </header>
+           )
+    }
 }
 
 export default Header;
