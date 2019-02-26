@@ -40,6 +40,12 @@ text-align: center;
   margin-left:10px;
 }
 
+.completed-text {
+  text-decoration: line-through;
+  color:#b6b6b6;
+  font-weight: normal;
+}
+
 .app-footer {
   height:70px;
   background-color:#333333;
